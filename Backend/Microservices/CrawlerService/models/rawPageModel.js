@@ -5,7 +5,10 @@ const rawPageSchema = new mongoose.Schema({
   title: String,
   text: String,
   crawledAt: { type: Date, default: Date.now },
-});
+},{
+    collection:'rawPages'
+  }
+);
 
 const RawPage = mongoose.model('RawPage', rawPageSchema);
 

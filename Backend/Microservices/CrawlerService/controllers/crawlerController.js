@@ -1,5 +1,5 @@
 import { crawlPage } from '../utils/crawler.js';
-// import RawPage from '../models/rawPageModel.js';
+import RawPage from '../models/rawPageModel.js';
 
 export const crawlUrl = async (req, res) => {
   const { url } = req.body;
@@ -10,8 +10,8 @@ export const crawlUrl = async (req, res) => {
   if (!pageData) return res.status(500).json({ message: 'Failed to crawl' });
 
   // // Save raw page data to DB
-  // const rawPage = new RawPage(pageData);
-  // await rawPage.save();
+  const rawPage = new RawPage(pageData);
+  await rawPage.save();
 
   // TODO: Notify Indexer service (e.g., via message queue or HTTP)
 
