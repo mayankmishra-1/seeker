@@ -1,8 +1,8 @@
 import express from 'express';
-import { buildIndex } from '../controllers/indexerController.js';
+import { startIndexerConsumer } from '../controllers/indexerController.js';
 
 const router = express.Router();
 
-router.post('/build', buildIndex);
+router.post('/build', startIndexerConsumer);
 
 export default router;
