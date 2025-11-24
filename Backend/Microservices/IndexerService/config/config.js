@@ -1,3 +1,6 @@
-import { connectDB } from './config.js';
+import dotenv from 'dotenv'
+import { connectDB } from './mongoDbConfig.js';
 
-export const initDB = () => connectDB('mongodb://localhost:27017/indexerDB');
+dotenv.config();
+
+export const initDB = () => connectDB(process.env.MONGO_URI);
