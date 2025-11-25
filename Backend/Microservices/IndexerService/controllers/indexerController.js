@@ -20,7 +20,7 @@ export const startIndexerConsumer = async () => {
         if (!msg) return;
 
         const { pageId, url } = JSON.parse(msg.content.toString());
-        console.log("📨 Received message to index:", pageId, url);
+        console.log("Received message to index:", pageId, url);
 
         try {
           // 1️⃣ Fetch Raw Page

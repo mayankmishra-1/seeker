@@ -1,4 +1,3 @@
-// config.js
 import mongoose from 'mongoose';
 
 export const connectDB = async (mongoURI) => {
