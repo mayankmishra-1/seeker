@@ -32,6 +32,7 @@ export const startIndexerConsumer = async () => {
 
           // 2️⃣ Tokenize text
           const tokens = tokenizeText(page.text);
+          console.log("tokens:", tokens)
           const frequencyMap = {};
 
           tokens.forEach((token, i) => {
@@ -40,6 +41,7 @@ export const startIndexerConsumer = async () => {
             }
             frequencyMap[token].frequency++;
             frequencyMap[token].positions.push(i);
+            // console.log("fmap",frequencyMap)
           });
 
           // 3️⃣ Remove previous index entries for THIS URL
